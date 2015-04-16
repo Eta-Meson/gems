@@ -4,6 +4,7 @@ import json
 import copy
 import os
 import xlrd
+from django import http
 
 
 from django import forms
@@ -649,3 +650,11 @@ def selectedCandidates(request):
 	#winnerlist = [('Vice President', [('candOne', 400, 'permaLink')]), ('Senator', [('candFive', 500, 'xxx'), ('candSix', 764, 'xxx'), ('candSeven', 200, 'xxx')]), ('Technical Secratary', [('CandFour', 500)])]
 	contextObj = Context({'winnerlist' : winnerlist})
 	return render_to_response('selected-candidates.html', contextObj)
+
+#To get the IP
+def allowed_ip(request):
+
+	if request.method == 'GET':
+		return render_to_response('admin_ip.html',{'ip' : request.META.get('HTTP_HOST')})
+	else:		 
+		return render_to_response('admin_ip.html',{'ip' : "error"})

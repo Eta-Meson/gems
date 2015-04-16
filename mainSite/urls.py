@@ -12,6 +12,8 @@ urlpatterns = patterns('',
 	url(r'^voterHome/voter-info$', views.voter_info),
 	url(r'^login$', views.user_login, name='login'),
 	url(r'^adminHome$', views.adminHome, name='adminHome'),
+	url(r'^adminHome/ip$', views.allowed_ip),
+
 	url(r'^adminHome/create-form$', views.create_form),
 	url(r'^adminHome/create-form/add-form-details$', views.add_form_details),
 	url(r'^adminHome/create-form/add-fields$', views.add_fields),
