@@ -6,4 +6,11 @@ Gymkhana Election Management System
 Run
 ```
 python manage.py shell < dummydata.py
+
 ```
+
+
+### Dependencies
+
+    pip install django-block-ip
+
